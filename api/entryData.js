@@ -3,7 +3,7 @@ import client from '../utils/client';
 const endpoint = client.databaseURL;
 
 const getEntries = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/entries.json`, {
+  fetch(`${endpoint}/entires.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
