@@ -1,20 +1,13 @@
-// import clearDom from '../utils/clearDOM';
+import clearDom from '../utils/clearDOM';
+import filterBtn from '../components/filters';
 import renderToDom from '../utils/renderToDOM';
 
 const showButtonsAndCards = (array) => {
-  // clearDom();
-
-  const btnString = `
-  <button type="button" class="btn btn-success">Javascript</button>
-  <button type="button" class="btn btn-danger">C#</button>
-  <button type="button" class="btn btn-warning">Python</button>
-  <button type="button" class="btn btn-success">PHP</button>
-  `;
-
-  renderToDom('#cardButtons', btnString);
+  clearDom();
 
   let domString = '';
   array.forEach((item) => {
+    console.warn('item', item);
     domString += `
     <div class="card" style="width: 18rem;">
       <div class="card-body">
@@ -27,7 +20,7 @@ const showButtonsAndCards = (array) => {
     </div>
   `;
   });
-
+  filterBtn();
   renderToDom('#cards', domString);
 };
 

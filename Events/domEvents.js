@@ -1,8 +1,13 @@
 import showButtonsAndCards from '../pages/card';
 import updateEntryForm from '../pages/updateEntyForm';
-import { getEntries, deleteEntries, getSingleEntry } from '../api/entryData';
+import {
+  getEntries,
+  deleteEntries,
+  getSingleEntry,
 
-function domEvents() {
+} from '../api/entryData';
+
+function domEvents(user) {
   document.querySelector('#cards').addEventListener('click', (e) => {
     if (e.target.id.includes('update-entry')) {
       const [, firebaseKey] = e.target.id.split('--');
@@ -16,7 +21,7 @@ function domEvents() {
         const [, firebaseKey] = e.target.id.split('--');
 
         deleteEntries(firebaseKey).then(() => {
-          getEntries().then(showButtonsAndCards);
+          getEntries(user.uid).then(showButtonsAndCards);
         });
       }
     }
