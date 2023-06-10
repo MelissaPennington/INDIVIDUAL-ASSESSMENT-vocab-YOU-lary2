@@ -1,8 +1,8 @@
-import clearDom from '../utils/clearDOM';
+// import clearDom from '../utils/clearDOM';
 import renderToDom from '../utils/renderToDOM';
 
 const showButtonsAndCards = (array) => {
-  clearDom();
+  // clearDom();
 
   const btnString = `
   <button type="button" class="btn btn-success">Javascript</button>
