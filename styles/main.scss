@@ -3,8 +3,27 @@
 
 
 body {
-  background-color: antiquewhite;
+  background-color: gray;
   color: brown;
   text-align: center;
   margin-top: 100px;
+}
+
+.card {
+  margin-bottom: 10px;
+  justify-content: center;
+
+}
+
+
+.filter-btns {
+  margin-bottom: 20px;
+}
+
+.crd {
+  margin: 0px, 0px, 0px;
+}
+
+.submit-btn {
+  margin-top: 10px;
 }
