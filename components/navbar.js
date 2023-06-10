@@ -10,10 +10,8 @@ const navbar = () => {
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="#" id="add-form">
+          <li id="add-entry" class="nav-item active">
               Create entry <span class="sr-only">(current)</span>
-            </a>
           </li>
         </ul>
         <span class="navbar-text">
