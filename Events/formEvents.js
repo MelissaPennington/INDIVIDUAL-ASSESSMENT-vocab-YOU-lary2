@@ -13,13 +13,14 @@ const formEvents = (user) => {
         language: document.querySelector('#languageSelect').value,
         // eslint-disable-next-line no-template-curly-in-string
         uid: `${user.uid}`,
+        date: new Date()
       };
 
       createEntry(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
 
         updateEntry(patchPayload).then(() => {
-          getEntries().then(showButtonsAndCards);
+          getEntries(`${user.uid}`).then(showButtonsAndCards);
         });
       });
       document.querySelector('#formComponent').reset();
@@ -39,7 +40,7 @@ const formEvents = (user) => {
         uid: `${user.uid}`,
       };
       updateEntry(payload).then(() => {
-        getEntries().then(showButtonsAndCards);
+        getEntries(`${user.uid}`).then(showButtonsAndCards);
       });
     }
   });

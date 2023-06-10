@@ -5,6 +5,7 @@ const domBuilder = () => {
   <div id="navigation"></div>  
   <div id="main">
     <div id="form"></div>
+    <div id="filters"></div>
     <div id="cardButtons"></div>
     <div id="cards"></div>
   </div>  

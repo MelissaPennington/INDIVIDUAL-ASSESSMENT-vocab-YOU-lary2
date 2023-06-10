@@ -8,13 +8,13 @@ import { getEntries } from '../api/entryData';
 import formEvents from '../Events/formEvents';
 
 const startApp = (user) => {
-  domBuilder();
+  domBuilder(user);
   navbar();
-  navigationEvents();
+  navigationEvents(user);
   domEvents(user);
   formEvents(user);
   logoutButton();
-  getEntries().then((entry) => showButtonsAndCards(entry));
+  getEntries(`${user.uid}`).then((entry) => showButtonsAndCards(entry));
 };
 
 export default startApp;

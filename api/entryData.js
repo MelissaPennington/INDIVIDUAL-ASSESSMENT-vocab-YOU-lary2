@@ -1,9 +1,9 @@
-import client from '../utils/client';
+// import client from '../utils/client';
 
-const endpoint = client.databaseURL;
+const endpoint = 'https://vocab-you-lary2-default-rtdb.firebaseio.com/';
 
-const getEntries = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/entires.json`, {
+const getEntries = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/entires.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -60,10 +60,62 @@ const updateEntry = (payload) => new Promise((resolve, reject) => {
     .then(resolve)
     .catch(reject);
 });
+const jsCards = () => new Promise((resolve, reject) => {
+  console.warn('test');
+  fetch(`${endpoint}/entires.json?orderBy="category"&equalTo="JS"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+const cCards = () => new Promise((resolve, reject) => {
+  console.warn('test');
+  fetch(`${endpoint}/entires.json?orderBy="category"&equalTo="JS"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+const pythonCards = () => new Promise((resolve, reject) => {
+  console.warn('test');
+  fetch(`${endpoint}/entires.json?orderBy="category"&equalTo="JS"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+const phpCards = () => new Promise((resolve, reject) => {
+  console.warn('test');
+  fetch(`${endpoint}/entires.json?orderBy="category"&equalTo="JS"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
 export {
   getEntries,
   deleteEntries,
   getSingleEntry,
   updateEntry,
-  createEntry
+  createEntry,
+  jsCards,
+  cCards,
+  pythonCards,
+  phpCards
 };

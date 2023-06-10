@@ -1,8 +1,8 @@
 import renderToDOM from '../utils/renderToDOM';
-// import clearDom from '../utils/clearDOM';
+import clearDom from '../utils/clearDOM';
 
 const renderForm = () => {
-  // clearDom();
+  clearDom();
   const domstring = `
   <h1>Make a new card</h1>
   <br />
