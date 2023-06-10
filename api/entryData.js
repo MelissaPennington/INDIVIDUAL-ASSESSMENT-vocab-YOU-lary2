@@ -60,62 +60,11 @@ const updateEntry = (payload) => new Promise((resolve, reject) => {
     .then(resolve)
     .catch(reject);
 });
-const jsCards = () => new Promise((resolve, reject) => {
-  console.warn('test');
-  fetch(`${endpoint}/entires.json?orderBy="category"&equalTo="JS"`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
-    .catch(reject);
-});
-const cCards = () => new Promise((resolve, reject) => {
-  console.warn('test');
-  fetch(`${endpoint}/entires.json?orderBy="category"&equalTo="JS"`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
-    .catch(reject);
-});
-const pythonCards = () => new Promise((resolve, reject) => {
-  console.warn('test');
-  fetch(`${endpoint}/entires.json?orderBy="category"&equalTo="JS"`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
-    .catch(reject);
-});
-const phpCards = () => new Promise((resolve, reject) => {
-  console.warn('test');
-  fetch(`${endpoint}/entires.json?orderBy="category"&equalTo="JS"`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
-    .catch(reject);
-});
+
 export {
   getEntries,
   deleteEntries,
   getSingleEntry,
   updateEntry,
   createEntry,
-  jsCards,
-  cCards,
-  pythonCards,
-  phpCards
 };
